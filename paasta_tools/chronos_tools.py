@@ -760,7 +760,7 @@ def filter_non_temporary_chronos_jobs(jobs):
     :returns: a list of chronos jobs containing the same jobs as those provided
         by the ``jobs`` parameter, but with temporary jobs removed.
     """
-    return [job for job in jobs if not job['name'].startswith(TMP_JOB_IDENTIFIER)]
+    return [job for job in jobs if not is_temporary_job(job)]
 
 
 def filter_chronos_jobs(jobs, service, instance, include_disabled, include_temporary):
